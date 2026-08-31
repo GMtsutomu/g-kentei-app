@@ -1,41 +1,47 @@
-const CACHE_NAME = 'g-test-pwa-v1';
-const ASSETS_TO_CACHE = [
+const CACHE_NAME = 'gtest-pwa-cache-v1';
+const urlsToCache = [
   './',
   './index.html',
-  './manifest.json'
+  './manifest.json',
+  './icon-192x192.png',
+  './icon-512x512.png'
 ];
 
-self.addEventListener('install', (event) => {
+// インストール時にファイルをキャッシュ
+self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        return cache.addAll(urlsToCache);
+      })
   );
-  self.skipWaiting();
 });
 
-self.addEventListener('activate', (event) => {
+// ネットワークリクエストをインターセプトし、キャッシュがあればそれを返す
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        if (response) {
+          return response; // キャッシュに存在する場合
+        }
+        return fetch(event.request); // キャッシュにない場合はネットワークから取得
+      })
+  );
+});
+
+// 新しいバージョンになった際に古いキャッシュを削除
+self.addEventListener('activate', function(event) {
+  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
-    caches.keys().then((keys) => {
+    caches.keys().then(function(cacheNames) {
       return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
+        cacheNames.map(function(cacheName) {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
           }
         })
       );
-    })
-  );
-  self.clients.claim();
-});
-
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request);
     })
   );
 });
