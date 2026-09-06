@@ -1,6 +1,6 @@
 {
-  "name": "G検定 模擬テスト",
-  "short_name": "G検定模試",
+  "name": "G検定対策アプリ",
+  "short_name": "G検定対策",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0f172a",
