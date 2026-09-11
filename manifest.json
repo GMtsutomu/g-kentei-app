@@ -1,22 +1,18 @@
 {
-  "name": "G検定対策アプリ",
-  "short_name": "G検定対策",
-  "start_url": "./index.html",
+  "name": "G検定完全攻略ロードマップ",
+  "short_name": "Gロードマップ",
+  "description": "G検定の重要キーワードを8章・記事で学ぶ学習ロードマップです。",
+  "start_url": "./top.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "background_color": "#f4f1f7",
+  "theme_color": "#6750a4",
+  "lang": "ja",
   "icons": [
-    {
-      "src": "icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-      "purpose": "maskable"
-    },
-    {
-      "src": "icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-      "purpose": "maskable"
-    }
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }
