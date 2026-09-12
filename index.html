@@ -1,183 +1,684 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="G検定の重要キーワードを8章207記事で学ぶG検定完全攻略ロードマップです。"><title>G検定完全攻略ロードマップ</title>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>G検定対策アプリ（分割データ版・basic/mock対応）</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#6750a4">
+<meta name="theme-color" content="#2563eb">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Gロードマップ">
+<meta name="apple-mobile-web-app-title" content="G検定アプリ">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
 <style>
-:root{--p:#6750a4;--bg:#f4f1f7;--paper:#fff;--ink:#242126;--muted:#655f6d;--line:#ddd6e6;--green:#1c7954;--greenbg:#e8f6ef;--orange:#ad6500;--shadow:0 5px 16px #3f31521a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Yu Gothic",Meiryo,sans-serif;line-height:1.6;font-size:15px}
-.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.6rem;z-index:20}
-.wrap{width:min(1080px,calc(100% - 20px));margin:auto}
-.hero{background:linear-gradient(135deg,#49327f,#7b59ba);color:#fff;padding:22px 0 20px}
-.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.10em;opacity:.85;text-transform:uppercase}
-.hero h1{font-size:clamp(1.4rem,4.8vw,2.1rem);line-height:1.25;margin:.2em 0 18px}
-.actions{display:grid;gap:10px}
-.btn{display:flex;justify-content:center;align-items:center;border:0;border-radius:12px;padding:14px 16px;font:inherit;font-weight:800;font-size:1rem;text-decoration:none;cursor:pointer;width:100%}
-.btn.light{background:#fff;color:#503a82}
-.btn.ghost{background:#ffffff1f;color:#fff;border:1px solid #ffffff66}
-.btn.primary{background:var(--p);color:#fff}
-.install-banner{display:none;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:14px 0;box-shadow:var(--shadow)}
-.install-banner.show{display:flex}
-.install-banner p{margin:0;font-size:.85rem;color:var(--ink);flex:1}
-.install-banner button{flex:none;border:0;background:var(--p);color:#fff;font-weight:800;border-radius:10px;padding:9px 14px;font-size:.85rem;cursor:pointer}
-.install-banner .close{background:transparent;color:var(--muted);font-weight:700;padding:9px 8px}
-main{padding:14px 0 40px}
-.card{background:var(--paper);border-radius:16px;box-shadow:var(--shadow);padding:16px;margin:14px 0}
-.card h2{margin:0 0 4px;color:#44306f;font-size:1.08rem}
-.sub{color:var(--muted);margin:0 0 10px;font-size:.85rem}
-.statusbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;background:#f8f6fb;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.83rem}
-.statusbar b{color:var(--p);font-weight:800}
-.statusbar .sep{color:var(--line);font-weight:400}
-.progress{flex:1 1 90px;min-width:70px;height:7px;background:#dfd9e8;border-radius:999px;overflow:hidden}
-.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--p),#aa86df)}
-.chapter-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
-.chapter{text-align:left;cursor:pointer;color:inherit;border:1px solid var(--line);background:#fff;border-radius:13px;padding:11px}
-.chapter.active{background:#eee8f7;border:2px solid var(--p)}
-.chapter .tag{display:inline-block;background:#e9e2f2;color:#503a82;border-radius:999px;padding:2px 8px;font-size:.72rem;font-weight:800}
-.chapter h3{font-size:.87rem;line-height:1.4;margin:6px 0 2px}
-.chapter small{color:var(--muted);font-size:.75rem}
-.head{display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap}
-.search{width:100%;margin-top:8px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:.85rem}
-.goal{background:#f8f6fb;border-left:4px solid var(--p);border-radius:8px;padding:10px 12px;margin:12px 0;font-size:.85rem}
-.article-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-.article{display:grid;grid-template-columns:auto 1fr;gap:8px 10px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px}
-.article.done{background:var(--greenbg);border-color:#b8decc}
-.article input{width:20px;height:20px;accent-color:var(--green)}
-.article a{color:#2f2541;text-decoration:none;font-weight:700;font-size:.9rem}
-.status{grid-column:2;font-size:.74rem;color:var(--muted)}
-.notice{font-size:.78rem;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:12px}
-.exam{border-top:5px solid var(--orange)}
-.exam p{font-size:.88rem}
-.exam details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
-.exam li{margin:.4em 0;font-size:.88rem}
-.footer{text-align:center;color:var(--muted);padding:20px 10px;font-size:.8rem}
-@media(min-width:640px){
- body{font-size:16px}
- .hero{padding:36px 0 32px}.hero h1{font-size:clamp(1.9rem,4.6vw,2.9rem)}
- .actions{grid-template-columns:repeat(3,1fr)}
- .card{padding:22px;border-radius:20px}
- .chapter-grid{grid-template-columns:repeat(4,1fr)}
- .article{grid-template-columns:auto 1fr auto}
- .status{grid-column:auto}
- .head{align-items:center}
- .search{width:min(300px,100%);margin-top:0}
-}
-@media print{.actions,.search,.install-banner{display:none}.card{box-shadow:none;border:1px solid #ccc}}
-</style></head><body>
-<a class="skip" href="#main">本文へ移動</a>
-<header class="hero"><div class="wrap">
-<div class="eyebrow">G検定完全攻略</div>
-<h1>G検定完全攻略ロードマップ</h1>
-<div class="actions">
-<button class="btn light" id="start">記事を読む</button>
-<button class="btn ghost" id="cont">続きから学ぶ</button>
-</div>
-</div></header>
-<main id="main" class="wrap">
-<div class="install-banner" id="installBanner">
-<p> ホーム画面に追加すると、アプリのように起動できます。</p>
-<button id="installBtn">追加する</button>
-<button class="close" id="installClose">閉じる</button>
-</div>
-<section class="card">
-<h2>学習状況</h2>
-<div class="statusbar">
-<span>学習済み <b id="done">0</b> / 207</span>
-<span class="sep">・</span>
-<span>全体進捗 <b id="percent">0%</b></span>
-<span class="sep">・</span>
-<span>選択中 <b id="current">第1章</b></span>
-<div class="progress"><span id="totalBar"></span></div>
-</div>
-</section>
-<section class="card" id="chapters">
-<h2>第1章から第8章を選択</h2>
-<p class="sub">章を選ぶと、下の記事一覧が切り替わります。</p>
-<div class="chapter-grid" id="chapterGrid"></div>
-</section>
-<section class="card" id="articles">
-<div class="head">
-<div><h2 id="title"></h2><p class="sub" id="desc"></p></div>
-</div>
-<input id="search" class="search" type="search" placeholder="この章の記事を検索" aria-label="記事を検索">
-<div class="goal"><strong id="goal"></strong><div class="progress"><span id="chapterBar"></span></div><span id="chapterText"></span></div>
-<ul class="article-list" id="list"></ul>
-<p class="notice">記事を開いただけでは学習済みになりません。読み終えたらチェックしてください。学習履歴はこのブラウザのサイトデータに保存されます。</p>
-</section>
-<section class="card exam" id="exam">
-<h2>試験直前に確認する「試験の概要」</h2>
-<p>試験形式、申込方法、開催日程は変更される場合があるため、まずJDLA公式サイトを確認してください。補助教材として、サイト内の試験概要5記事も利用できます。</p>
-<a class="btn primary" href="https://www.jdla.org/certificate/general/" target="_blank" rel="noopener noreferrer">JDLA G検定公式サイト</a>
-<details><summary><strong>サイト内の試験概要5記事を見る</strong></summary>
-<ol>
-<li><a href="gkentei-overview-01.html">G検定とは何か？試験全体像をつかむ</a></li>
-<li><a href="gkentei-overview-02.html">シラバスの読み方と8章ロードマップ</a></li>
-<li><a href="gkentei-basic-mock-03.html">基本問題と模擬問題の使い分け</a></li>
-<li><a href="gkentei-time-04.html">120分を乗り切る時間配分</a></li>
-<li><a href="gkentei-history-05.html">学習履歴と弱点分析の使い方</a></li>
-</ol>
-</details>
-</section>
-</main>
-<footer class="footer">G検定完全攻略ロードマップ</footer>
-<script>
-const C=[
-{id:'ch1',label:'第1章',title:'人工知能（AI）とは',count:7,desc:'AIの定義と、知能をめぐる哲学的な問いを学びます。',goal:'AIの定義と哲学的論点を説明できる',a:['そもそも「人工知能」って何者なのか？','強いAIと弱いAIの違い','賢いのに認めてもらえない？AI効果','AIは考えているのか？チューリングテスト','AIに理解はあるのか？中国語の部屋','ロボットには体が必要？身体性','記号と現実を結ぶシンボルグラウンディング問題']},
-{id:'ch2',label:'第2章',title:'人工知能をめぐる動向',count:15,desc:'歴史、探索、知識表現、主要人物・出来事を時系列で整理します。',goal:'AIの歴史・探索・知識表現を時系列で整理できる'},
-{id:'ch3',label:'第3章',title:'機械学習の具体的手法',count:49,desc:'機械学習、統計、評価指標の代表的な手法を学びます。',goal:'手法・統計・評価指標を使い分けられる'},
-{id:'ch4',label:'第4章',title:'ディープラーニングの概要',count:9,desc:'ニューラルネットワークと深層学習の基本構造を学びます。',goal:'ニューラルネットワークの全体像を説明できる'},
-{id:'ch5',label:'第5章',title:'ディープラーニングの要素技術',count:34,desc:'構成、学習、最適化、安定化に必要な技術を学びます。',goal:'学習・安定化・構成要素の役割を説明できる'},
-{id:'ch6',label:'第6章',title:'ディープラーニングの応用例',count:42,desc:'画像、言語、音声、生成、制御への応用を学びます。',goal:'用途に応じた代表モデルを識別できる'},
-{id:'ch7',label:'第7章',title:'AIの社会実装に向けて',count:21,desc:'AIの企画、開発、導入、運用、説明可能性を学びます。',goal:'導入から運用までの流れを説明できる'},
-{id:'ch8',label:'第8章',title:'AIの法律と倫理',count:30,desc:'法律、契約、倫理、ガバナンス、リスクを学びます。',goal:'AI活用時の法務・倫理・リスクを判断できる'}];
-const F={ch1:['gkentei-ch1-01-what-is-ai-reader-style.html','gkentei-ch1-02-strong-weak-ai-reader-style.html']},K='gkentei_article_progress_v1';
-let s;try{s=JSON.parse(localStorage.getItem(K))||{completedArticles:[]}}catch(e){s={completedArticles:[]}}
-let selected=s.lastSelectedChapter||'ch1';
-const $=id=>document.getElementById(id),key=(c,i)=>c+'-'+String(i+1).padStart(2,'0');
-function names(c){return c.a||Array.from({length:c.count},(_,i)=>`${c.title}の記事 ${i+1}`)}
-function save(){s.lastSelectedChapter=selected;s.updatedAt=new Date().toISOString();localStorage.setItem(K,JSON.stringify(s))}
-function select(id){selected=id;save();$('search').value='';renderTabs();renderList();$('articles').scrollIntoView({behavior:'smooth'})}
-function renderTabs(){$('chapterGrid').innerHTML=C.map(c=>`<button class="chapter ${c.id===selected?'active':''}" data-id="${c.id}"><span class="tag">${c.label}</span><h3>${c.title}</h3><small>${c.count}記事</small></button>`).join('');document.querySelectorAll('.chapter').forEach(b=>b.onclick=()=>select(b.dataset.id))}
-function renderList(){let c=C.find(x=>x.id===selected)||C[0],q=$('search').value.toLowerCase();$('title').textContent=c.label+' '+c.title;$('desc').textContent=c.desc;$('goal').textContent='学習ゴール：'+c.goal;$('current').textContent=c.label;$('list').innerHTML=names(c).map((t,i)=>({t,i})).filter(x=>x.t.toLowerCase().includes(q)).map(x=>{let k=key(c.id,x.i),d=s.completedArticles.includes(k),u=F[c.id]?.[x.i]||'#';return `<li class="article ${d?'done':''}"><input type="checkbox" data-key="${k}" ${d?'checked':''} aria-label="${x.t}を学習済みにする"><a href="${u}" ${u==='#'?'onclick="return false"':''}>${x.i+1}. ${x.t}</a><span class="status">${d?'学習済み':u==='#'?'準備中':'未学習'}</span></li>`}).join('');document.querySelectorAll('.article input').forEach(x=>x.onchange=()=>toggle(x.dataset.key,x.checked));let n=s.completedArticles.filter(x=>x.startsWith(c.id+'-')).length,p=Math.round(n/c.count*100);$('chapterBar').style.width=p+'%';$('chapterText').textContent=`${n} / ${c.count}記事（${p}%）`;total()}
-function toggle(k,on){let z=new Set(s.completedArticles);on?z.add(k):z.delete(k);s.completedArticles=[...z];save();renderList()}
-function total(){let n=s.completedArticles.length,p=Math.round(n/207*100);$('done').textContent=n;$('percent').textContent=p+'%';$('totalBar').style.width=p+'%'}
-$('start').onclick=()=>select(selected||'ch1');$('cont').onclick=()=>select(s.lastSelectedChapter||'ch1');$('search').oninput=renderList;renderTabs();renderList();
-
-/* ==========================================================================
-   PWA対応：Service Worker登録 と「ホーム画面に追加」バナー
-   ========================================================================== */
-if('serviceWorker' in navigator){
-  window.addEventListener('load', function(){
-    navigator.serviceWorker.register('sw.js').catch(function(){});
-  });
-}
-let deferredInstallPrompt = null;
-window.addEventListener('beforeinstallprompt', function(e){
-  e.preventDefault();
-  deferredInstallPrompt = e;
-  if(localStorage.getItem('gkentei_roadmap_install_dismissed') !== '1'){
-    $('installBanner').classList.add('show');
+  :root{
+    --bg:#0f172a;
+    --card:#ffffff;
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --correct:#16a34a;
+    --incorrect:#dc2626;
+    --text:#1e293b;
+    --muted:#64748b;
+    --border:#e2e8f0;
+    --chip:#eef2ff;
+    --basic:#0ea5e9;
+    --mock:#f97316;
   }
-});
-$('installBtn').onclick = async function(){
-  if(!deferredInstallPrompt) return;
-  deferredInstallPrompt.prompt();
-  await deferredInstallPrompt.userChoice;
-  deferredInstallPrompt = null;
-  $('installBanner').classList.remove('show');
-};
-$('installClose').onclick = function(){
-  $('installBanner').classList.remove('show');
-  localStorage.setItem('gkentei_roadmap_install_dismissed','1');
-};
-window.addEventListener('appinstalled', function(){
-  $('installBanner').classList.remove('show');
-});
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;}
+  body{
+    font-family:"Hiragino Sans","Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:linear-gradient(160deg,#0f172a 0%,#1e3a8a 45%,#1e40af 100%);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:16px;
+  }
+  .app{width:100%; max-width:560px; display:flex; flex-direction:column; gap:14px;}
+  header.top{text-align:center; color:#fff; padding:8px 4px 2px;}
+  header.top h1{font-size:20px; margin:0 0 4px; letter-spacing:0.5px;}
+  header.top p{margin:0; font-size:12px; color:#cbd5e1;}
+  .card{background:var(--card); border-radius:16px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,0.25);}
+  .home-stats{display:flex; justify-content:space-between; background:var(--chip); border-radius:12px; padding:12px 16px; margin-bottom:14px; font-size:12.5px; color:var(--muted);}
+  .home-stats b{color:var(--text); font-size:16px;}
+  .mode-tabs{display:flex; gap:8px; margin-bottom:14px;}
+  .mode-tab{flex:1; text-align:center; padding:10px 6px; border-radius:10px; border:1.5px solid var(--border); background:#f8fafc; font-size:12.5px; font-weight:700; color:var(--muted); cursor:pointer;}
+  .mode-tab.active{background:var(--primary); color:#fff; border-color:var(--primary);}
+  .mode-desc{font-size:12px; color:var(--muted); margin:-6px 0 14px; line-height:1.6;}
+  .cat-list{display:flex; flex-direction:column; gap:10px;}
+  .cat-btn{display:flex; align-items:center; justify-content:space-between; width:100%; text-align:left; padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:#f8fafc; cursor:pointer; font-size:14px; color:var(--text); transition:transform .12s ease, box-shadow .12s ease, background .12s ease;}
+  .cat-btn:active{transform:scale(0.98);}
+  .cat-btn:hover{background:#eef2ff; box-shadow:0 4px 10px rgba(37,99,235,0.15);}
+  .cat-btn .meta{display:flex; flex-direction:column; align-items:flex-end; gap:2px;}
+  .cat-btn .count{font-size:11px; color:var(--muted);}
+  .cat-btn.disabled{opacity:0.45; cursor:not-allowed;}
+  .cat-btn.wrong{background:#fff1f2; border-color:#fecdd3;}
+  .cat-btn.wrong:hover{background:#ffe4e6;}
+  .badge{display:inline-block; font-size:11px; padding:2px 8px; border-radius:999px; background:var(--primary); color:#fff; font-weight:600;}
+  .badge.red{background:var(--incorrect);}
+  .badge.orange{background:var(--mock);}
+  .badge.blue{background:var(--basic);}
+  .section-label{font-size:12.5px; font-weight:700; color:var(--muted); margin:14px 0 8px; display:flex; align-items:center; gap:6px;}
+  .quiz-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;}
+  .quiz-top .progress-text{font-size:13px; color:var(--muted); font-weight:600;}
+  .progress-bar-track{height:6px; width:100%; background:#e2e8f0; border-radius:999px; overflow:hidden; margin-bottom:16px;}
+  .progress-bar-fill{height:100%; background:linear-gradient(90deg,#2563eb,#3b82f6); transition:width .3s ease;}
+  .tier-chip{display:inline-block; font-size:11px; padding:3px 10px; border-radius:999px; margin:0 6px 10px 0; font-weight:700; color:#fff;}
+  .tier-chip.basic{background:var(--basic);}
+  .tier-chip.mock{background:var(--mock);}
+  .cat-chip{display:inline-block; font-size:11px; background:var(--chip); color:var(--primary-dark); padding:3px 10px; border-radius:999px; margin-bottom:10px; font-weight:600;}
+  .question-text{font-size:16px; line-height:1.6; margin:6px 0 18px; font-weight:600; white-space:pre-wrap;}
+  .options{display:flex; flex-direction:column; gap:10px;}
+  .option-btn{display:flex; align-items:flex-start; gap:10px; text-align:left; padding:13px 14px; border-radius:12px; border:1.5px solid var(--border); background:#fff; font-size:14px; line-height:1.5; cursor:pointer; color:var(--text); transition:border-color .12s ease, background .12s ease;}
+  .option-btn:hover:not(.locked){border-color:var(--primary); background:#f5f8ff;}
+  .option-btn .idx{flex:0 0 auto; width:22px; height:22px; border-radius:50%; background:#e2e8f0; color:var(--muted); font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;}
+  .option-btn.correct{border-color:var(--correct); background:#f0fdf4;}
+  .option-btn.correct .idx{background:var(--correct); color:#fff;}
+  .option-btn.incorrect{border-color:var(--incorrect); background:#fef2f2;}
+  .option-btn.incorrect .idx{background:var(--incorrect); color:#fff;}
+  .option-btn.locked{cursor:default;}
+  .option-btn.dim{opacity:0.55;}
+  .feedback-box{margin-top:16px; padding:14px 16px; border-radius:12px; font-size:13.5px; line-height:1.7; animation:fadeIn .25s ease; white-space:pre-wrap;}
+  .feedback-box.correct{background:#f0fdf4; border:1px solid #bbf7d0;}
+  .feedback-box.incorrect{background:#fef2f2; border:1px solid #fecaca;}
+  .feedback-title{font-weight:700; font-size:14.5px; margin-bottom:6px; display:flex; align-items:center; gap:6px;}
+  .feedback-title.correct{color:var(--correct);}
+  .feedback-title.incorrect{color:var(--incorrect);}
+  .explanation{color:#334155;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:13px 18px; border-radius:12px; border:none; font-size:14.5px; font-weight:700; cursor:pointer; width:100%;}
+  .btn-primary{background:var(--primary); color:#fff;}
+  .btn-primary:hover{background:var(--primary-dark);}
+  .btn-secondary{background:#f1f5f9; color:var(--text);}
+  .btn-secondary:hover{background:#e2e8f0;}
+  .btn-row{display:flex; gap:10px; margin-top:16px;}
+  .btn-row .btn{flex:1;}
+  .next-wrap{margin-top:14px;}
+  .result-score{text-align:center; padding:20px 0 10px;}
+  .result-score .big{font-size:44px; font-weight:800; color:var(--primary);}
+  .result-score .sub{font-size:14px; color:var(--muted); margin-top:4px;}
+  .understanding-badge{display:inline-block; margin-top:10px; padding:6px 16px; border-radius:999px; font-size:13px; font-weight:800; color:#fff;}
+  .understanding-badge.lv-great{background:var(--correct);}
+  .understanding-badge.lv-good{background:#65a30d;}
+  .understanding-badge.lv-more{background:#d97706;}
+  .understanding-badge.lv-weak{background:var(--incorrect);}
+  .breakdown-row{display:flex; justify-content:space-between; font-size:12.5px; color:var(--muted); padding:6px 0; border-bottom:1px solid var(--border);}
+  .breakdown-row b{color:var(--text);}
+  .weak-keyword{display:flex; justify-content:space-between; align-items:center; padding:9px 12px; border-radius:10px; background:#fff7ed; border:1px solid #fed7aa; font-size:12.5px; margin-bottom:8px;}
+  .result-list{display:flex; flex-direction:column; gap:8px; margin:14px 0; max-height:280px; overflow-y:auto;}
+  .result-item{display:flex; align-items:flex-start; gap:8px; padding:10px 12px; border-radius:10px; background:#f8fafc; font-size:12.5px; line-height:1.5;}
+  .result-item .mark{flex:0 0 auto; font-weight:800;}
+  .result-item.ok .mark{color:var(--correct);}
+  .result-item.ng .mark{color:var(--incorrect);}
+  .weak-table{width:100%; border-collapse:collapse; font-size:12.5px; margin-top:8px;}
+  .weak-table th, .weak-table td{text-align:left; padding:8px 6px; border-bottom:1px solid var(--border);}
+  .weak-table th{color:var(--muted); font-weight:700; font-size:11.5px;}
+  .weak-bar-track{background:#e2e8f0; border-radius:999px; height:6px; width:100%; overflow:hidden;}
+  .weak-bar-fill{height:100%; background:linear-gradient(90deg,#f97316,#ef4444);}
+  .hidden{display:none !important;}
+  .empty-state{text-align:center; padding:30px 10px; color:var(--muted); font-size:13.5px;}
+  .empty-state .emoji{font-size:32px; display:block; margin-bottom:8px;}
+  footer.foot{text-align:center; color:#cbd5e1; font-size:11px; padding:6px 0 20px;}
+  .install-banner{display:none; align-items:center; gap:10px; background:#fff; border-radius:14px; padding:12px 14px; margin-bottom:4px; box-shadow:0 10px 30px rgba(0,0,0,0.25);}
+  .install-banner.show{display:flex;}
+  .install-banner p{margin:0; font-size:12.5px; color:var(--text); flex:1; line-height:1.5;}
+  .install-banner button{flex:none; border:none; background:var(--primary); color:#fff; font-weight:700; border-radius:10px; padding:9px 14px; font-size:12.5px; cursor:pointer;}
+  .install-banner .close{background:transparent; color:var(--muted); font-weight:700; padding:9px 8px;}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="install-banner" id="installBanner">
+    <p> ホーム画面に追加すると、アプリのように起動できます。</p>
+    <button id="installBtn">追加する</button>
+    <button class="close" id="installClose">閉じる</button>
+  </div>
+  <header class="top">
+    <h1>🧠 G検定対策アプリ</h1>
+    <p>基本問題で理解度チェック → 模擬問題で本番レベルを確認（全999問収録）</p>
+  </header>
+
+  <div id="screen-home" class="card">
+    <div class="home-stats">
+      <div>累計挑戦回数<br><b id="stat-total-attempts">0</b> 回</div>
+      <div>総合理解度<br><b id="stat-understanding">--</b>%</div>
+      <div>間違い保存中<br><b id="stat-wrong-count">0</b> 問</div>
+    </div>
+
+    <div class="mode-tabs">
+      <div class="mode-tab active" id="tab-basic" data-mode="basic"> 基本問題</div>
+      <div class="mode-tab" id="tab-chapter-mock" data-mode="chapter-mock"> 章末模試</div>
+      <div class="mode-tab" id="tab-full-mock" data-mode="full-mock"> 本番模試</div>
+    </div>
+    <div class="mode-desc" id="mode-desc"></div>
+
+    <div class="section-label" id="cat-list-label"> 章を選んで出題</div>
+    <div class="cat-list" id="category-list"></div>
+
+    <div id="full-mock-launch" class="hidden" style="margin-top:6px;">
+      <button class="btn btn-primary" id="btn-start-full-mock"> 全8章 本番模試を開始（60問）</button>
+    </div>
+
+    <div class="section-label"> 復習</div>
+    <div class="cat-list">
+      <button class="cat-btn wrong" id="btn-wrong-review">
+        <span>間違った問題を復習する</span>
+        <span class="meta"><span class="badge red" id="wrong-review-badge">0問</span></span>
+      </button>
+    </div>
+    <div class="section-label"> 分析</div>
+    <div class="cat-list">
+      <button class="cat-btn" id="btn-weak-analysis">
+        <span>弱点分析（章別・basic/mock別）</span>
+        <span class="meta"><span class="count">詳細を見る ›</span></span>
+      </button>
+      <button class="cat-btn" id="btn-reset-data">
+        <span>学習履歴をリセット</span>
+        <span class="meta"><span class="count">誤答記録・統計を消去</span></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="screen-quiz" class="card hidden">
+    <div class="quiz-top">
+      <span class="progress-text" id="quiz-progress-text">問題 1/10</span>
+      <span class="progress-text" id="quiz-score-text">正解 0</span>
+    </div>
+    <div class="progress-bar-track"><div class="progress-bar-fill" id="quiz-progress-fill" style="width:10%"></div></div>
+    <div>
+      <span class="tier-chip" id="quiz-tier-chip"></span>
+      <span class="cat-chip" id="quiz-cat-chip">第1章</span>
+    </div>
+    <div class="question-text" id="quiz-question"></div>
+    <div class="options" id="quiz-options"></div>
+    <div id="quiz-feedback"></div>
+    <div class="next-wrap hidden" id="quiz-next-wrap">
+      <button class="btn btn-primary" id="btn-next-question">次の問題へ →</button>
+    </div>
+  </div>
+
+  <div id="screen-result" class="card hidden">
+    <div class="result-score">
+      <div class="sub" id="result-cat-label">第1章</div>
+      <div class="big"><span id="result-correct">0</span>/<span id="result-total">10</span></div>
+      <div class="sub">スコア <b id="result-rate">0</b>点</div>
+      <div><span class="understanding-badge" id="result-understanding-badge">--</span></div>
+    </div>
+    <div id="result-breakdown" class="hidden">
+      <div class="section-label" style="margin-top:16px;"> 内訳</div>
+      <div class="breakdown-row"><span>基本問題</span><b id="breakdown-basic">--</b></div>
+      <div class="breakdown-row"><span>模擬問題</span><b id="breakdown-mock">--</b></div>
+    </div>
+    <div id="result-weak-keywords"></div>
+    <div class="section-label"> 今回の内訳</div>
+    <div class="result-list" id="result-list"></div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" id="btn-back-home"> カテゴリ選択へ</button>
+      <button class="btn btn-primary" id="btn-retry-same"> もう一度</button>
+    </div>
+  </div>
+
+  <div id="screen-weak" class="card hidden">
+    <div class="section-label" style="margin-top:0;"> 章別 弱点分析</div>
+    <div id="weak-content"></div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" id="btn-weak-back"> カテゴリ選択へ</button>
+    </div>
+  </div>
+
+  <footer class="foot">社会人のためのG検定完全攻略ロードマップ・対策アプリ（全999問・basic/mock分割データ版）</footer>
+</div>
+
+<!--
+  ================================================================
+  問題データの読み込み
+  ・新しい章を追加するときだけ、ここに1行追加してください。
+  ・既存の章に問題を追加するときは、このindex.htmlを編集する必要はありません。
+    該当する questions/basic/chN.js もしくは questions/mock/chN.js
+    だけを直接編集してください。
+  ================================================================
+-->
+<script src="questions/basic/ch1.js"></script>
+<script src="questions/basic/ch2.js"></script>
+<script src="questions/basic/ch3.js"></script>
+<script src="questions/basic/ch4.js"></script>
+<script src="questions/basic/ch5.js"></script>
+<script src="questions/basic/ch6.js"></script>
+<script src="questions/basic/ch7.js"></script>
+<script src="questions/basic/ch8.js"></script>
+<script src="questions/mock/ch1.js"></script>
+<script src="questions/mock/ch2.js"></script>
+<script src="questions/mock/ch3.js"></script>
+<script src="questions/mock/ch4.js"></script>
+<script src="questions/mock/ch5.js"></script>
+<script src="questions/mock/ch6.js"></script>
+<script src="questions/mock/ch7.js"></script>
+<script src="questions/mock/ch8.js"></script>
+
+<script>
+(function(){
+  "use strict";
+
+  var CATEGORY_ORDER = [
+    "第1章　人工知能（AI）とは",
+    "第2章　人工知能をめぐる動向",
+    "第3章　機械学習の具体的手法",
+    "第4章　ディープラーニングの概要",
+    "第5章　ディープラーニングの要素技術",
+    "第6章　ディープラーニングの応用例",
+    "第7章　AIの社会実装に向けて",
+    "第8章　AIの法律と倫理"
+  ];
+  var CATEGORY_SHORT = {};
+  CATEGORY_ORDER.forEach(function(c){ CATEGORY_SHORT[c] = c.split('\u3000')[0]; });
+
+  var ALL_QUESTIONS = window.G_QUESTION_BANK || [];
+
+  var STORAGE_KEY = "gtest_progress_v2";
+  function loadState(){
+    try{
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if(raw) return JSON.parse(raw);
+    }catch(e){}
+    return {
+      wrongIds: [],
+      history: [],
+      catStats: {},
+      keywordStats: {}
+    };
+  }
+  function saveState(s){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }catch(e){} }
+  var STATE = loadState();
+
+  function byId(id){ return document.getElementById(id); }
+  function shuffle(arr){
+    var a = arr.slice();
+    for(var i=a.length-1;i>0;i--){
+      var j = Math.floor(Math.random()*(i+1));
+      var tmp=a[i]; a[i]=a[j]; a[j]=tmp;
+    }
+    return a;
+  }
+  function show(id){ byId(id).classList.remove('hidden'); }
+  function hide(id){ byId(id).classList.add('hidden'); }
+  function showOnly(id){
+    ['screen-home','screen-quiz','screen-result','screen-weak'].forEach(function(s){
+      if(s===id) show(s); else hide(s);
+    });
+    window.scrollTo(0,0);
+  }
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  var byCategory = {};
+  ALL_QUESTIONS.forEach(function(q){
+    if(!byCategory[q.category]) byCategory[q.category] = {basic:[], mock:[]};
+    var tier = (q.tier === 'mock') ? 'mock' : 'basic';
+    byCategory[q.category][tier].push(q);
+  });
+  var qById = {};
+  ALL_QUESTIONS.forEach(function(q){ qById[q.id] = q; });
+
+  var currentMode = 'basic';
+  var MODE_DESC = {
+    'basic': '各章の「基本問題」だけを出題します。用語そのものの意味・定義を理解できているかを確認します。記事を読んだ直後の理解度チェックに使ってください。',
+    'chapter-mock': '選んだ章の「基本問題＋模擬問題」を混ぜて出題します。章を読み終えたあとの章末テストとして使ってください。',
+    'full-mock': '全8章から「模擬問題」のみを出題する、本番形式の模擬試験です。事例文をもとに判断する応用問題が中心です。'
+  };
+
+  document.querySelectorAll('.mode-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      document.querySelectorAll('.mode-tab').forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      currentMode = tab.getAttribute('data-mode');
+      renderHome();
+    });
+  });
+
+  function renderHome(){
+    byId('mode-desc').textContent = MODE_DESC[currentMode];
+    var list = byId('category-list');
+    list.innerHTML = '';
+    var catLabel = byId('cat-list-label');
+    var fullMockLaunch = byId('full-mock-launch');
+
+    if(currentMode === 'full-mock'){
+      hide('category-list');
+      catLabel.classList.add('hidden');
+      show('full-mock-launch');
+    } else {
+      show('category-list');
+      catLabel.classList.remove('hidden');
+      hide('full-mock-launch');
+      catLabel.textContent = currentMode === 'basic'
+        ? ' 章を選んで基本問題を出題'
+        : ' 章を選んで章末模試（基本＋模擬）を出題';
+
+      CATEGORY_ORDER.forEach(function(cat){
+        var bucket = byCategory[cat] || {basic:[], mock:[]};
+        var pool = currentMode === 'basic' ? bucket.basic : bucket.basic.concat(bucket.mock);
+        var btn = document.createElement('button');
+        btn.className = 'cat-btn' + (pool.length===0 ? ' disabled':'');
+        var detail = currentMode === 'basic'
+          ? bucket.basic.length + '問収録'
+          : bucket.basic.length + '問(基本)+' + bucket.mock.length + '問(模擬)';
+        btn.innerHTML = '<span>'+cat+'</span><span class="meta"><span class="count">'+detail+'</span></span>';
+        if(pool.length>0){
+          btn.addEventListener('click', function(){ startQuiz(cat, currentMode); });
+        }
+        list.appendChild(btn);
+      });
+    }
+
+    var totalAttempts = STATE.history.length;
+    byId('stat-total-attempts').textContent = totalAttempts;
+    if(totalAttempts>0){
+      var sumRate = STATE.history.reduce(function(acc,h){ return acc + (h.weightedRate!=null?h.weightedRate:h.correct/h.total); },0);
+      byId('stat-understanding').textContent = Math.round(sumRate/totalAttempts*100);
+    } else {
+      byId('stat-understanding').textContent = '--';
+    }
+    var wrongCount = STATE.wrongIds.length;
+    byId('stat-wrong-count').textContent = wrongCount;
+    byId('wrong-review-badge').textContent = wrongCount + '問';
+    var wrongBtn = byId('btn-wrong-review');
+    if(wrongCount===0){
+      wrongBtn.classList.add('disabled'); wrongBtn.onclick = null;
+    } else {
+      wrongBtn.classList.remove('disabled'); wrongBtn.onclick = function(){ startWrongReview(); };
+    }
+  }
+
+  byId('btn-start-full-mock').addEventListener('click', function(){
+    var pool = [];
+    CATEGORY_ORDER.forEach(function(cat){
+      var bucket = byCategory[cat] || {basic:[], mock:[]};
+      pool = pool.concat(bucket.mock);
+    });
+    if(pool.length===0){ alert('模擬問題がまだ登録されていません。'); return; }
+    quizState = {
+      questions: shuffle(pool).slice(0, Math.min(60, pool.length)),
+      index: 0, correctCount: 0, records: [],
+      category: '全8章 本番模試', mode: 'full-mock', isWrongReview: false
+    };
+    showOnly('screen-quiz');
+    renderQuestion();
+  });
+
+  var quizState = null;
+
+  function startQuiz(category, mode){
+    var bucket = byCategory[category] || {basic:[], mock:[]};
+    var pool = mode === 'basic' ? bucket.basic : bucket.basic.concat(bucket.mock);
+    var count = Math.min(mode === 'basic' ? 10 : 15, pool.length);
+    quizState = {
+      questions: shuffle(pool).slice(0, count),
+      index: 0, correctCount: 0, records: [],
+      category: category, mode: mode, isWrongReview: false
+    };
+    showOnly('screen-quiz');
+    renderQuestion();
+  }
+
+  function startWrongReview(){
+    var wrongQs = STATE.wrongIds.map(function(id){ return qById[id]; }).filter(Boolean);
+    if(wrongQs.length===0) return;
+    quizState = {
+      questions: shuffle(wrongQs).slice(0, Math.min(10, wrongQs.length)),
+      index: 0, correctCount: 0, records: [],
+      category: '間違った問題の復習', mode: 'review', isWrongReview: true
+    };
+    showOnly('screen-quiz');
+    renderQuestion();
+  }
+
+  function renderQuestion(){
+    var qs = quizState.questions, i = quizState.index, q = qs[i];
+    byId('quiz-progress-text').textContent = '問題 ' + (i+1) + '/' + qs.length;
+    byId('quiz-score-text').textContent = '正解 ' + quizState.correctCount;
+    byId('quiz-progress-fill').style.width = Math.round((i/qs.length)*100) + '%';
+    var tierChip = byId('quiz-tier-chip');
+    if(q.tier === 'mock'){ tierChip.textContent = ' 模擬問題'; tierChip.className = 'tier-chip mock'; }
+    else { tierChip.textContent = ' 基本問題'; tierChip.className = 'tier-chip basic'; }
+    byId('quiz-cat-chip').textContent = CATEGORY_SHORT[q.category] || q.category;
+    byId('quiz-question').textContent = q.statement;
+    var optWrap = byId('quiz-options');
+    optWrap.innerHTML = '';
+    q.options.forEach(function(opt, idx){
+      var b = document.createElement('button');
+      b.className = 'option-btn';
+      b.innerHTML = '<span class="idx">'+(idx+1)+'</span><span>'+escapeHtml(opt)+'</span>';
+      b.addEventListener('click', function(){ handleAnswer(idx); });
+      optWrap.appendChild(b);
+    });
+    byId('quiz-feedback').innerHTML = '';
+    hide('quiz-next-wrap');
+  }
+
+  function handleAnswer(selectedIdx){
+    var qs = quizState.questions, q = qs[quizState.index];
+    var correctIdx = q.correctAnswerIndex;
+    var isCorrect = (selectedIdx === correctIdx);
+    var optBtns = byId('quiz-options').querySelectorAll('.option-btn');
+    optBtns.forEach(function(btn, idx){
+      btn.classList.add('locked'); btn.onclick = null;
+      if(idx === correctIdx) btn.classList.add('correct');
+      else if(idx === selectedIdx) btn.classList.add('incorrect');
+      else btn.classList.add('dim');
+    });
+    var fb = byId('quiz-feedback'); fb.innerHTML = '';
+    var box = document.createElement('div');
+    box.className = 'feedback-box ' + (isCorrect ? 'correct':'incorrect');
+    var title = document.createElement('div');
+    title.className = 'feedback-title ' + (isCorrect?'correct':'incorrect');
+    title.textContent = isCorrect ? ' 正解です！' : ' 不正解';
+    var exp = document.createElement('div');
+    exp.className = 'explanation'; exp.textContent = q.explanation;
+    box.appendChild(title); box.appendChild(exp); fb.appendChild(box);
+    show('quiz-next-wrap');
+    byId('quiz-score-text').textContent = '正解 ' + (quizState.correctCount + (isCorrect?1:0));
+
+    quizState.records.push({ id:q.id, chapter:q.category, keyword:q.keyword, tier:q.tier,
+      difficulty:q.difficulty||1, statement:q.statement, correct:isCorrect });
+    if(isCorrect) quizState.correctCount++;
+
+    var idx2 = STATE.wrongIds.indexOf(q.id);
+    if(isCorrect){ if(idx2 !== -1) STATE.wrongIds.splice(idx2,1); }
+    else { if(idx2 === -1) STATE.wrongIds.push(q.id); }
+
+    if(!STATE.catStats[q.category]) STATE.catStats[q.category] = { basic:{attempts:0,correct:0}, mock:{attempts:0,correct:0} };
+    var tierKey = (q.tier === 'mock') ? 'mock' : 'basic';
+    STATE.catStats[q.category][tierKey].attempts++;
+    if(isCorrect) STATE.catStats[q.category][tierKey].correct++;
+
+    saveState(STATE);
+  }
+
+  byId('btn-next-question').addEventListener('click', function(){
+    quizState.index++;
+    if(quizState.index >= quizState.questions.length) finishQuiz();
+    else renderQuestion();
+  });
+
+  function computeUnderstanding(records){
+    var basicRecs = records.filter(function(r){ return r.tier !== 'mock'; });
+    var mockRecs  = records.filter(function(r){ return r.tier === 'mock'; });
+
+    var basicRate = basicRecs.length ? (basicRecs.filter(function(r){return r.correct;}).length / basicRecs.length) : null;
+
+    var mockWeightedTotal = 0, mockWeightedCorrect = 0;
+    mockRecs.forEach(function(r){
+      var w = r.difficulty || 1;
+      mockWeightedTotal += w;
+      if(r.correct) mockWeightedCorrect += w;
+    });
+    var mockRate = mockWeightedTotal ? (mockWeightedCorrect / mockWeightedTotal) : null;
+
+    var overall;
+    if(basicRate!=null && mockRate!=null) overall = basicRate*0.4 + mockRate*0.6;
+    else if(mockRate!=null) overall = mockRate;
+    else overall = basicRate;
+
+    return { basicRate: basicRate, mockRate: mockRate, overall: overall };
+  }
+
+  function understandingLabel(rate){
+    if(rate==null) return {text:'--', cls:''};
+    var pct = Math.round(rate*100);
+    if(pct>=90) return {text:' 合格圏内 ('+pct+'%)', cls:'lv-great'};
+    if(pct>=75) return {text:' おおむね理解 ('+pct+'%)', cls:'lv-good'};
+    if(pct>=60) return {text:' もう一歩 ('+pct+'%)', cls:'lv-more'};
+    return {text:' 要復習 ('+pct+'%)', cls:'lv-weak'};
+  }
+
+  function finishQuiz(){
+    byId('quiz-progress-fill').style.width = '100%';
+    var total = quizState.questions.length;
+    var correct = quizState.correctCount;
+    var rawRate = Math.round((correct/total)*100);
+
+    var u = computeUnderstanding(quizState.records);
+    var weightedRateForHistory = (u.overall!=null) ? u.overall : (correct/total);
+
+    STATE.history.push({ ts: Date.now(), category: quizState.category, total: total, correct: correct, weightedRate: weightedRateForHistory });
+    saveState(STATE);
+
+    byId('result-cat-label').textContent = quizState.isWrongReview ? '間違った問題の復習' :
+      (quizState.mode === 'full-mock' ? '全8章 本番模試' : (CATEGORY_SHORT[quizState.category] || quizState.category));
+    byId('result-correct').textContent = correct;
+    byId('result-total').textContent = total;
+    byId('result-rate').textContent = rawRate;
+
+    var lbl = understandingLabel(u.overall);
+    var badge = byId('result-understanding-badge');
+    badge.textContent = lbl.text;
+    badge.className = 'understanding-badge ' + lbl.cls;
+
+    var breakdownWrap = byId('result-breakdown');
+    if(u.basicRate!=null && u.mockRate!=null){
+      breakdownWrap.classList.remove('hidden');
+      byId('breakdown-basic').textContent = Math.round(u.basicRate*100) + '%';
+      byId('breakdown-mock').textContent = Math.round(u.mockRate*100) + '%';
+    } else {
+      breakdownWrap.classList.add('hidden');
+    }
+
+    var weakWrap = byId('result-weak-keywords');
+    weakWrap.innerHTML = '';
+
+    var list = byId('result-list');
+    list.innerHTML = '';
+    quizState.records.forEach(function(r, i){
+      var item = document.createElement('div');
+      item.className = 'result-item ' + (r.correct?'ok':'ng');
+      var tierMark = r.tier === 'mock' ? '' : '';
+      item.innerHTML = '<span class="mark">'+(r.correct?'○':'✕')+'</span><span>'+tierMark+' Q'+(i+1)+'. '+escapeHtml(r.statement)+'</span>';
+      list.appendChild(item);
+    });
+    showOnly('screen-result');
+  }
+
+  byId('btn-back-home').addEventListener('click', function(){ renderHome(); showOnly('screen-home'); });
+  byId('btn-retry-same').addEventListener('click', function(){
+    if(quizState.isWrongReview) startWrongReview();
+    else if(quizState.mode === 'full-mock') byId('btn-start-full-mock').click();
+    else startQuiz(quizState.category, quizState.mode);
+  });
+
+  byId('btn-weak-analysis').addEventListener('click', function(){ renderWeakAnalysis(); showOnly('screen-weak'); });
+  byId('btn-weak-back').addEventListener('click', function(){ renderHome(); showOnly('screen-home'); });
+
+  function renderWeakAnalysis(){
+    var content = byId('weak-content');
+    var stats = STATE.catStats;
+    var cats = CATEGORY_ORDER.filter(function(c){
+      var s = stats[c];
+      return s && ((s.basic && s.basic.attempts>0) || (s.mock && s.mock.attempts>0));
+    });
+    if(cats.length===0){
+      content.innerHTML = '<div class="empty-state"><span class="emoji"></span>まだ挑戦記録がありません。<br>まずはどこかの章に挑戦してみましょう。</div>';
+      return;
+    }
+    cats.sort(function(a,b){
+      function rate(c){
+        var s = stats[c]; var att=0, cor=0;
+        if(s.basic){ att+=s.basic.attempts; cor+=s.basic.correct; }
+        if(s.mock){ att+=s.mock.attempts; cor+=s.mock.correct; }
+        return att ? 1-(cor/att) : 0;
+      }
+      return rate(b) - rate(a);
+    });
+    var html = '<table class="weak-table"><thead><tr><th>章</th><th>基本</th><th>模擬</th><th></th></tr></thead><tbody>';
+    cats.forEach(function(c){
+      var s = stats[c];
+      var basicRate = (s.basic && s.basic.attempts) ? Math.round(s.basic.correct/s.basic.attempts*100) : null;
+      var mockRate = (s.mock && s.mock.attempts) ? Math.round(s.mock.correct/s.mock.attempts*100) : null;
+      var overallAtt = (s.basic?s.basic.attempts:0) + (s.mock?s.mock.attempts:0);
+      var overallCor = (s.basic?s.basic.correct:0) + (s.mock?s.mock.correct:0);
+      var wrongRate = overallAtt ? 100 - Math.round(overallCor/overallAtt*100) : 0;
+      html += '<tr>'
+        + '<td>'+ (CATEGORY_SHORT[c]||c) +'</td>'
+        + '<td>'+ (basicRate!=null ? basicRate+'%' : '-') +'</td>'
+        + '<td>'+ (mockRate!=null ? mockRate+'%' : '-') +'</td>'
+        + '<td style="min-width:70px;"><div class="weak-bar-track"><div class="weak-bar-fill" style="width:'+wrongRate+'%"></div></div></td>'
+        + '</tr>';
+    });
+    html += '</tbody></table>';
+    html += '<div style="font-size:12px;color:#64748b;margin-top:10px;">※バーが長い章ほど誤答率が高く、重点的な復習をおすすめします。基本問題が高くても模擬問題が低い章は、応用力の強化が必要です。</div>';
+    content.innerHTML = html;
+  }
+
+  byId('btn-reset-data').addEventListener('click', function(){
+    if(confirm('学習履歴・誤答記録をすべて削除します。よろしいですか？')){
+      STATE = { wrongIds:[], history:[], catStats:{}, keywordStats:{} };
+      saveState(STATE);
+      renderHome();
+    }
+  });
+
+  renderHome();
+  showOnly('screen-home');
+
+  /* ==========================================================================
+     PWA対応：Service Worker登録 と「ホーム画面に追加」バナー
+     ========================================================================== */
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('sw.js').catch(function(){});
+    });
+  }
+  var deferredInstallPrompt = null;
+  var installBanner = byId('installBanner');
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    if(localStorage.getItem('gkentei_quiz_install_dismissed') !== '1'){
+      installBanner.classList.add('show');
+    }
+  });
+  byId('installBtn').addEventListener('click', function(){
+    if(!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    deferredInstallPrompt.userChoice.then(function(){ deferredInstallPrompt = null; });
+    installBanner.classList.remove('show');
+  });
+  byId('installClose').addEventListener('click', function(){
+    installBanner.classList.remove('show');
+    localStorage.setItem('gkentei_quiz_install_dismissed','1');
+  });
+  window.addEventListener('appinstalled', function(){
+    installBanner.classList.remove('show');
+  });
+})();
 </script>
-</body></html>
+</body>
+</html>
