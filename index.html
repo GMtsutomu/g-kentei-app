@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>G検定対策アプリ（分割データ版・basic/mock対応）</title>
+<title>G検定対策アプリ（2026年度版）</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#2563eb">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="G検定アプリ">
+<meta name="apple-mobile-web-app-title" content="G検定対策アプリ">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
@@ -141,7 +141,7 @@
   </div>
   <header class="top">
     <h1>🧠 G検定対策アプリ</h1>
-    <p>基本問題で理解度チェック → 模擬問題で本番レベルを確認（全999問収録）</p>
+    <p>基礎問題で理解度チェック → 模擬問題で本番レベルを確認（全<span id="total-question-count">0</span>問収録）</p>
   </header>
 
   <div id="screen-home" class="card">
@@ -152,8 +152,8 @@
     </div>
 
     <div class="mode-tabs">
-      <div class="mode-tab active" id="tab-basic" data-mode="basic"> 基本問題</div>
-      <div class="mode-tab" id="tab-chapter-mock" data-mode="chapter-mock"> 章末模試</div>
+      <div class="mode-tab active" id="tab-basic" data-mode="basic"> 基礎問題</div>
+      <div class="mode-tab" id="tab-chapter-mock" data-mode="chapter-mock"> 模擬試験</div>
       <div class="mode-tab" id="tab-full-mock" data-mode="full-mock"> 本番模試</div>
     </div>
     <div class="mode-desc" id="mode-desc"></div>
@@ -175,7 +175,7 @@
     <div class="section-label"> 分析</div>
     <div class="cat-list">
       <button class="cat-btn" id="btn-weak-analysis">
-        <span>弱点分析（章別・basic/mock別）</span>
+        <span>弱点分析（基礎/模擬問題別）</span>
         <span class="meta"><span class="count">詳細を見る ›</span></span>
       </button>
       <button class="cat-btn" id="btn-reset-data">
@@ -212,7 +212,7 @@
     </div>
     <div id="result-breakdown" class="hidden">
       <div class="section-label" style="margin-top:16px;"> 内訳</div>
-      <div class="breakdown-row"><span>基本問題</span><b id="breakdown-basic">--</b></div>
+      <div class="breakdown-row"><span>基礎問題</span><b id="breakdown-basic">--</b></div>
       <div class="breakdown-row"><span>模擬問題</span><b id="breakdown-mock">--</b></div>
     </div>
     <div id="result-weak-keywords"></div>
@@ -232,7 +232,7 @@
     </div>
   </div>
 
-  <footer class="foot">社会人のためのG検定完全攻略ロードマップ・対策アプリ（全999問・basic/mock分割データ版）</footer>
+  <footer class="foot">G検定対策アプリ（全<span id="footer-question-count">0</span>問・2026年度版）</footer>
 </div>
 
 <!--
@@ -328,11 +328,27 @@
   var qById = {};
   ALL_QUESTIONS.forEach(function(q){ qById[q.id] = q; });
 
+  // ▼▼▼ ここから追加 ▼▼▼
+    var totalQuestionCount = ALL_QUESTIONS.length;
+    
+    // タイトル下の問題数を更新
+    var countElement = document.getElementById('total-question-count');
+    if (countElement) {
+      countElement.textContent = totalQuestionCount;
+    }
+    
+    // フッターの問題数を更新
+    var footerCountElement = document.getElementById('footer-question-count');
+    if (footerCountElement) {
+      footerCountElement.textContent = totalQuestionCount;
+    }
+    // ▲▲▲ ここまで追加 ▲▲▲
+  
   var currentMode = 'basic';
   var MODE_DESC = {
-    'basic': '各章の「基本問題」だけを出題します。用語そのものの意味・定義を理解できているかを確認します。記事を読んだ直後の理解度チェックに使ってください。',
-    'chapter-mock': '選んだ章の「基本問題＋模擬問題」を混ぜて出題します。章を読み終えたあとの章末テストとして使ってください。',
-    'full-mock': '全8章から「模擬問題」のみを出題する、本番形式の模擬試験です。事例文をもとに判断する応用問題が中心です。'
+    'basic': '各章の「基礎レベル」だけを10問出題します。用語そのものの意味・定義を理解できているかを確認します。理解度チェックに使ってください。',
+    'chapter-mock': '選んだ章の「基礎＋模試レベル」を混ぜて10問出題します。簡易的な模擬試験として使ってください。',
+    'full-mock': '全8章から「模試レベル」のみを出題する、本番形式の実践模擬試験です。事例文をもとに判断する応用問題が中心です。'
   };
 
   document.querySelectorAll('.mode-tab').forEach(function(tab){
@@ -360,8 +376,8 @@
       catLabel.classList.remove('hidden');
       hide('full-mock-launch');
       catLabel.textContent = currentMode === 'basic'
-        ? ' 章を選んで基本問題を出題'
-        : ' 章を選んで章末模試（基本＋模擬）を出題';
+        ? ' 章を選んで基礎問題を出題'
+        : ' 章を選んで章末模試（基礎＋模擬）を出題';
 
       CATEGORY_ORDER.forEach(function(cat){
         var bucket = byCategory[cat] || {basic:[], mock:[]};
@@ -370,7 +386,7 @@
         btn.className = 'cat-btn' + (pool.length===0 ? ' disabled':'');
         var detail = currentMode === 'basic'
           ? bucket.basic.length + '問収録'
-          : bucket.basic.length + '問(基本)+' + bucket.mock.length + '問(模擬)';
+          : bucket.basic.length + '問(基礎)+' + bucket.mock.length + '問(模擬)';
         btn.innerHTML = '<span>'+cat+'</span><span class="meta"><span class="count">'+detail+'</span></span>';
         if(pool.length>0){
           btn.addEventListener('click', function(){ startQuiz(cat, currentMode); });
@@ -448,7 +464,7 @@
     byId('quiz-progress-fill').style.width = Math.round((i/qs.length)*100) + '%';
     var tierChip = byId('quiz-tier-chip');
     if(q.tier === 'mock'){ tierChip.textContent = ' 模擬問題'; tierChip.className = 'tier-chip mock'; }
-    else { tierChip.textContent = ' 基本問題'; tierChip.className = 'tier-chip basic'; }
+    else { tierChip.textContent = ' 基礎問題'; tierChip.className = 'tier-chip basic'; }
     byId('quiz-cat-chip').textContent = CATEGORY_SHORT[q.category] || q.category;
     byId('quiz-question').textContent = q.statement;
     var optWrap = byId('quiz-options');
@@ -617,7 +633,7 @@
       }
       return rate(b) - rate(a);
     });
-    var html = '<table class="weak-table"><thead><tr><th>章</th><th>基本</th><th>模擬</th><th></th></tr></thead><tbody>';
+    var html = '<table class="weak-table"><thead><tr><th>章</th><th>基礎</th><th>模擬</th><th></th></tr></thead><tbody>';
     cats.forEach(function(c){
       var s = stats[c];
       var basicRate = (s.basic && s.basic.attempts) ? Math.round(s.basic.correct/s.basic.attempts*100) : null;
@@ -633,7 +649,7 @@
         + '</tr>';
     });
     html += '</tbody></table>';
-    html += '<div style="font-size:12px;color:#64748b;margin-top:10px;">※バーが長い章ほど誤答率が高く、重点的な復習をおすすめします。基本問題が高くても模擬問題が低い章は、応用力の強化が必要です。</div>';
+    html += '<div style="font-size:12px;color:#64748b;margin-top:10px;">※バーが長い章ほど誤答率が高く、重点的な復習をおすすめします。基礎問題が高くても模擬問題が低い章は、応用力の強化が必要です。</div>';
     content.innerHTML = html;
   }
 
