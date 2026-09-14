@@ -13,7 +13,7 @@
    ========================================================================== */
 "use strict";
 
-var CACHE_VERSION = "v0";
+var CACHE_VERSION = "v0.1";
 var CACHE_NAME = "gkentei-quiz-" + CACHE_VERSION;
 
 var CORE_ASSETS = [
