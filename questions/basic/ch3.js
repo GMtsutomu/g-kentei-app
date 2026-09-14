@@ -7,7 +7,7 @@ window.G_QUESTION_BANK = window.G_QUESTION_BANK || [];
 window.G_QUESTION_BANK.push(
   {
     "id": 51,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "回帰問題と分類問題の違いとして適切なものはどれか。",
     "options": [
       "回帰は連続値、分類はカテゴリを予測する",
@@ -21,7 +21,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 52,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "線形回帰の説明として適切なものはどれか。",
     "options": [
       "説明変数と目的変数の関係を線形モデルで表す",
@@ -35,7 +35,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 53,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "単回帰分析と重回帰分析の違いはどれか。",
     "options": [
       "説明変数が1個か複数か",
@@ -49,7 +49,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 54,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "ロジスティック回帰の主な用途はどれか。",
     "options": [
       "分類",
@@ -63,7 +63,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 55,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "多クラス分類の説明として適切なものはどれか。",
     "options": [
       "3種類以上のクラスから予測する",
@@ -77,7 +77,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 56,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "SVMのマージン最大化とは何か。",
     "options": [
       "分類境界と最も近いサンプルとの距離を最大にする",
@@ -91,7 +91,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 57,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "カーネルトリックの説明として適切なものはどれか。",
     "options": [
       "高次元特徴空間の内積を明示的写像なしに計算する",
@@ -105,7 +105,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 58,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "決定木の特徴として適切なものはどれか。",
     "options": [
       "条件分岐を木構造で表し解釈しやすい",
@@ -119,7 +119,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 59,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "アンサンブル学習とは何か。",
     "options": [
       "複数モデルの予測を組み合わせる",
@@ -133,7 +133,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 60,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "バギングの説明として適切なものはどれか。",
     "options": [
       "複数モデルを独立に学習し平均や多数決で統合する",
@@ -147,7 +147,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 61,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "ブートストラップサンプリングとは何か。",
     "options": [
       "元データから復元抽出する",
@@ -161,7 +161,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 62,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "ランダムフォレストの説明として適切なものはどれか。",
     "options": [
       "多数の決定木をバギングし特徴量もランダムに選ぶ",
@@ -175,7 +175,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 63,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "ブースティングの説明として適切なものはどれか。",
     "options": [
       "弱学習器を逐次追加して誤りを補う",
@@ -189,7 +189,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 64,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "勾配ブースティングの説明として適切なものはどれか。",
     "options": [
       "損失の負の勾配に対応する残差を逐次学習する",
@@ -203,7 +203,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 65,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "自己回帰モデルの説明として適切なものはどれか。",
     "options": [
       "ある変数の現在値を自身の過去値で表す",
@@ -217,7 +217,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 66,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "ベクトル自己回帰モデルの説明として適切なものはどれか。",
     "options": [
       "複数の時系列変数を互いの過去値で表す",
@@ -231,7 +231,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 90,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "クラスタリングの説明として適切なものはどれか。",
     "options": [
       "ラベルなしデータを類似性に基づきグループ化する",
@@ -245,7 +245,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 91,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "k-means法の説明として適切なものはどれか。",
     "options": [
       "指定したk個のクラスタ中心への割当てと中心更新を繰り返す",
@@ -259,7 +259,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 92,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "ウォード法の説明として適切なものはどれか。",
     "options": [
       "結合によるクラスタ内平方和の増加が小さい組から併合する",
@@ -273,7 +273,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 93,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "デンドログラムとは何か。",
     "options": [
       "階層的クラスタリングの併合関係を示す樹形図",
@@ -287,7 +287,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 94,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "主成分分析の説明として適切なものはどれか。",
     "options": [
       "分散が大きくなる互いに直交する軸へ射影して次元を減らす",
@@ -301,7 +301,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 95,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "t-SNEの主な用途として適切なものはどれか。",
     "options": [
       "高次元データの局所構造を保った2次元・3次元可視化",
@@ -315,7 +315,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 96,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "多次元尺度構成法の説明として適切なものはどれか。",
     "options": [
       "点同士の距離・非類似度を低次元配置で再現する",
@@ -329,7 +329,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 97,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "特異値分解の説明として適切なものはどれか。",
     "options": [
       "行列を直交行列と特異値を持つ行列の積に分解する",
@@ -343,7 +343,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 98,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "協調フィルタリングの説明として適切なものはどれか。",
     "options": [
       "利用者やアイテムの行動履歴の類似性を利用する",
@@ -357,7 +357,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 99,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "コンテンツベースフィルタリングの説明として適切なものはどれか。",
     "options": [
       "利用者が好んだアイテムと属性が似るものを推薦する",
@@ -371,7 +371,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 100,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "コールドスタート問題とは何か。",
     "options": [
       "新規利用者や新規アイテムの履歴が少なく推薦しにくい問題",
@@ -385,7 +385,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 101,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "トピックモデルとは何か。",
     "options": [
       "文書を複数トピックの混合として表すモデル",
@@ -399,7 +399,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 102,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "潜在的ディリクレ配分法の説明として適切なものはどれか。",
     "options": [
       "文書のトピック分布とトピックの単語分布にディリクレ事前分布を置く",
@@ -413,7 +413,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 140,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "強化学習の目的として適切なものはどれか。",
     "options": [
       "環境との相互作用から累積報酬を大きくする方策を学ぶ",
@@ -427,7 +427,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 141,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "マルコフ決定過程の要素として適切な組合せはどれか。",
     "options": [
       "状態・行動・遷移確率・報酬・割引率",
@@ -441,7 +441,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 142,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "状態価値関数とは何か。",
     "options": [
       "ある状態から方策に従うときの期待収益",
@@ -455,7 +455,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 143,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "行動価値関数とは何か。",
     "options": [
       "ある状態で特定行動を選び、その後方策に従う期待収益",
@@ -469,7 +469,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 144,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "割引率の役割として適切なものはどれか。",
     "options": [
       "将来の報酬を現在価値へ割り引く",
@@ -483,7 +483,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 145,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "Q学習の説明として適切なものはどれか。",
     "options": [
       "次状態で最大のQ値を用いて更新するオフポリシー手法",
@@ -497,7 +497,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 146,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "SARSAの説明として適切なものはどれか。",
     "options": [
       "実際に選んだ次の行動のQ値を使って更新するオンポリシー手法",
@@ -511,7 +511,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 147,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "ε-greedy方策の説明として適切なものはどれか。",
     "options": [
       "確率εで探索し、それ以外は価値最大の行動を選ぶ",
@@ -525,7 +525,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 148,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "UCB方策の説明として適切なものはどれか。",
     "options": [
       "推定平均報酬と不確実性の上限を組み合わせる",
@@ -539,7 +539,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 149,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "バンディットアルゴリズムが主に扱う課題はどれか。",
     "options": [
       "探索と活用のバランス",
@@ -553,7 +553,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 150,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "方策勾配法の説明として適切なものはどれか。",
     "options": [
       "期待収益が増える方向へ方策パラメータを直接更新する",
@@ -567,7 +567,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 151,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "REINFORCEの説明として適切なものはどれか。",
     "options": [
       "エピソードで得た収益を使うモンテカルロ型方策勾配法",
@@ -581,7 +581,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 152,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "Actor-Criticの役割分担として適切なものはどれか。",
     "options": [
       "Actorが方策、Criticが価値を学習する",
@@ -595,7 +595,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 200,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "汎化性能とは何か。",
     "options": [
       "未学習データに対する予測性能",
@@ -609,7 +609,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 201,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "過学習の状態として適切なものはどれか。",
     "options": [
       "訓練性能は高いが未知データ性能が低い",
@@ -623,7 +623,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 202,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "ホールドアウト検証とは何か。",
     "options": [
       "データを学習用と評価用に一度分割する",
@@ -637,7 +637,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 203,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "k-分割交差検証の説明として適切なものはどれか。",
     "options": [
       "データをk分割し検証部分を交代しながらk回評価する",
@@ -651,7 +651,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 204,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "混同行列が整理するものはどれか。",
     "options": [
       "実際のクラスと予測クラスの組合せ",
@@ -665,7 +665,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 205,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "偽陽性とはどれか。",
     "options": [
       "実際は陰性だが陽性と予測",
@@ -679,7 +679,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 206,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "偽陰性とはどれか。",
     "options": [
       "実際は陽性だが陰性と予測",
@@ -693,7 +693,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 207,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "適合率の定義として適切なものはどれか。",
     "options": [
       "TP/(TP+FP)",
@@ -707,7 +707,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 208,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "再現率の定義として適切なものはどれか。",
     "options": [
       "TP/(TP+FN)",
@@ -721,7 +721,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 209,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "F値の説明として適切なものはどれか。",
     "options": [
       "適合率と再現率の調和平均",
@@ -735,7 +735,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 210,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "ROC曲線の軸の組合せとして適切なものはどれか。",
     "options": [
       "横軸が偽陽性率、縦軸が真陽性率",
@@ -749,7 +749,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 211,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "AUCの説明として適切なものはどれか。",
     "options": [
       "ROC曲線の下の面積で、一般に大きいほど識別能力が高い",
@@ -763,7 +763,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 212,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "MSEの説明として適切なものはどれか。",
     "options": [
       "予測誤差を二乗して平均する",
@@ -777,7 +777,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 213,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "RMSEの説明として適切なものはどれか。",
     "options": [
       "MSEの平方根",
@@ -791,7 +791,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 214,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "MAEの説明として適切なものはどれか。",
     "options": [
       "予測誤差の絶対値を平均する",
@@ -805,7 +805,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 215,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "オッカムの剃刀が示す考え方はどれか。",
     "options": [
       "同程度に説明できるなら単純な仮説を選ぶ",
@@ -819,7 +819,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 216,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "AICのモデル比較として適切なものはどれか。",
     "options": [
       "同じデータに対する候補では値が小さいモデルを選ぶ",
@@ -833,7 +833,7 @@ window.G_QUESTION_BANK.push(
   },
   {
     "id": 217,
-    "category": "第3章　機械学習の概要",
+    "category": "第3章　機械学習の具体的手法",
     "statement": "BICの説明として適切なものはどれか。",
     "options": [
       "対数尤度とパラメータ数に加え標本数を使う複雑度ペナルティを持つ",
